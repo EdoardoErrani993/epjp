@@ -6,7 +6,7 @@ public class For {
             System.out.println("Begin block loop " + i);
 
             if (i == 2) {
-                continue;
+                continue; //ti porta in su al for e salta il ciclo if se i == 2
             }
 
             System.out.println("End block loop " + i);

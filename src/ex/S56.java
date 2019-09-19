@@ -8,8 +8,11 @@ public class S56 {
      * @return the input reversed
      */
     public static String reverse(String s) {
-        // TODO
-        return "";
+    	StringBuilder res = new StringBuilder(s);
+    	res.reverse();
+    	
+        return res.toString();
+        
     }
 
     /**
@@ -19,10 +22,14 @@ public class S56 {
      * @return true if the parameter is a palindrome
      */
     public static boolean isPalindrome(String s) {
-        // TODO
+    	StringBuilder res = new StringBuilder(s);
+    	res.reverse();
+    	if (s.contentEquals(res.toString())) {
+    		return true;
+    	}else {
         return false;
     }
-
+    }
     /**
      * Remove vowels from the parameter
      * 

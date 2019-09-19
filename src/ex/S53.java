@@ -50,11 +50,12 @@ public class S53 {
      * @param value
      * @return sum of digits
      */
-    //public static int digitSum(int value) {
+    public static int digitSum(int value) {
         // TODO
     	//boolean zerovalue
    // while () 
     //	}
-        //return c;
+        return 0;
     }
+}
 //}

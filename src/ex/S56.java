@@ -37,8 +37,17 @@ public class S56 {
      * @return a string, same of input but without vowels
      */
     public static String removeVowels(String s) {
-        // TODO
-        return "";
+    	StringBuilder res = new StringBuilder();
+    
+    for (int i = 0; i < s.length(); i++)	{
+    	
+    	if (s.charAt(i) == 'A' ||s.charAt(i) == 'E' ||s.charAt(i) =='I' ||s.charAt(i) =='O' ||s.charAt(i) =='U' ||s.charAt(i) == 'a' ||s.charAt(i) =='e' ||s.charAt(i) =='i' ||s.charAt(i) =='o' ||s.charAt(i) =='u') {
+    		
+    	}else {
+    		res.append(s.charAt(i));
+    	}
+    }
+    	return res.toString();
     }
 
     /**
@@ -48,7 +57,7 @@ public class S56 {
      * @return the converted integer
      */
     public static int bin2dec(String s) {
-        // TODO
+        
         return 0;
     }
 
@@ -59,9 +68,13 @@ public class S56 {
      * @return a new array holding the same elements of input, in reversed order
      */
     public static int[] reverse(int[] data) {
-        int[] result = new int[0];
-
-        // TODO
+        int[] result = new int[data.length];
+        
+        for (int i = data.length - 1; i >=0; i--) {
+        	
+        	result[i]=data[data.length-1-i]; 
+        }
+        
 
         return result;
     }
@@ -73,8 +86,17 @@ public class S56 {
      * @return the average
      */
     public static double average(int[] data) {
-        // TODO
-        return 0;
+    	double result = 0;
+    			
+    	for (int i = 0;i < data.length; i++) {
+    		
+    		result = data [i] + result;
+    		
+    	}
+    	
+    	result = result / data.length;
+    	
+        return result;
     }
     
     /**
@@ -84,7 +106,7 @@ public class S56 {
      * @return the largest value
      */
     public static int max(int[] data) {
-        // TODO
+       
         return 0;
     }
 }

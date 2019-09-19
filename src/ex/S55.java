@@ -9,22 +9,17 @@ public class S55 {
 	 * @return the sum of all the numbers, or zero
 	 */
 	public static long sum(int first, int last) {
-		// TODO
 		if (first > last) {
-
-			return 0;
-		}
-		long c = 0;
+		return 0;
+	}		
+		long c = 0;	
 		
 		for (int i = first; i <= last; i++) {
-
-		 c = i + c;
-
+			c = i + c;
 		}
-
 		return c;
-	}
-
+}
+	
 	/**
 	 * Add up only the even numbers in the passed closed interval
 	 * 
@@ -34,19 +29,14 @@ public class S55 {
 	 */
 	public static long evenSum(int first, int last) {
 		if (first > last) {
-
 			return 0;
 		}
 		long c = 0;
-		
 		for (int i = first; i <= last; i++) {
         if (i % 2 == 0) {
         	c = i + c;
 } 
-		 
-
 		}
-
 		return c;
 	}
 
@@ -110,7 +100,7 @@ public class S55 {
 		
 			
 			}
-
 		return result;
 	}
-}
+	
+	}

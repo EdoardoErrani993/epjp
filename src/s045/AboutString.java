@@ -30,7 +30,7 @@ public class AboutString {
         System.out.println("there is no \"lx\" in s: " + s.indexOf("lx"));
 
         System.out.println("check if an empty string is empty: " + "".isEmpty());
-
+        															//newString("").isEmpty()
         System.out.println("s length: " + s.length());
 
         String s2 = s.replace('l', 'q');
@@ -48,8 +48,8 @@ public class AboutString {
         System.out.println("lower: " + "SHUT UP!".toLowerCase());
 
         System.out.println("trim [" + " la la la ".trim() + "]");
-        
-        String x = null;
+        											//elimina gli spazi ai lati
+        String x = null;  
         System.out.println("Sort of safe toString(): " + String.valueOf(x));
     }
 }

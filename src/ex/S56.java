@@ -100,6 +100,7 @@ public class S56 {
 	}
 
 	/**
+	 *
 	 * Find the largest value
 	 * 
 	 * @param data

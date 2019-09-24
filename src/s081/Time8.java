@@ -1,5 +1,6 @@
 package s081;
 
+import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
@@ -20,5 +21,8 @@ public class Time8 {
 
         LocalDateTime ldt = LocalDateTime.of(date, time);
         System.out.println(ldt);
+        
+        Duration d = Duration.of(12, null);
+        System.out.println(d);
     }
 }

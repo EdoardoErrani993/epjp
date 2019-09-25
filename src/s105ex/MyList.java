@@ -40,6 +40,9 @@ public class MyList {
 				nextNode = cur.getNext();
 				index++;
 			}
+			
+			
+			
 		}
 		index++;
 

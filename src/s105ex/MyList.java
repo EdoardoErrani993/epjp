@@ -2,7 +2,7 @@ package s105ex;
 
 public class MyList {
 	private Node head; // sto creando un reference
-	private int sizeValue = 0;
+	private int sizeValue;
 
 	public void add(int value) {
 		Node node = new Node(value);
@@ -10,43 +10,44 @@ public class MyList {
 
 		if (head == null) {
 			head = node;
-			return;
+		} else {
+
+			Node cur = head;
+			Node nextNode = cur.getNext();
+			while (nextNode != null) {
+				cur = nextNode;
+				nextNode = cur.getNext();
+			}
+			cur.setNext(node);
 		}
 
-		Node cur = head;
-		Node nextNode = cur.getNext();
-		while (nextNode != null) {
-			cur = nextNode;
-			nextNode = cur.getNext();
-		}
-		cur.setNext(node);
+	}
+
+	public int get() {
+		return this.get(0);
 	}
 
 	public int get(int pos) {
-		if (this.head == null) {
-			return 0;
-		}
+
+	//	if (this.head == null) {
+	//		return 0;
+		//}
 
 		if (this.head != null && pos > this.getSize()) {
 			return 0;
 		}
 
 		int index = 0;
-		while (index <= pos) {
-			Node cur = head;
-			Node nextNode = cur.getNext();
-			while (nextNode != null) {
-				cur = nextNode;
-				nextNode = cur.getNext();
-				index++;
-			}
-			
-			
-			
+		Node cur = head;
+		Node nextNode = cur.getNext();
+		while (index <= pos && nextNode != null) {
+			cur = nextNode;
+			nextNode = cur.getNext();
+			index++;
 		}
 		index++;
+		return cur.getValue();
 
-		return index;
 	}
 
 	public int getSize() { // quanti nodi ho creato
@@ -67,6 +68,14 @@ public class MyList {
 
 //		return count;
 		return sizeValue;
+	}
+
+	public void pop() {
+		if (head == null) {
+			System.out.println("Lista vuota");
+		}
+		head = head.getNext();
+		this.sizeValue--;
 	}
 
 }

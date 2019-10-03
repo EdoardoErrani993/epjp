@@ -210,7 +210,7 @@ end;
 
 
 
-set serveroutput on
+set serveroutput on;
 begin
 dbms_output.put_line('Hello PL/SQL');
 end;
@@ -258,5 +258,56 @@ into v_first_name, v_last_name
 from coders
 where coder_id = 103;
 dbms_output.put_line('[' || v_first_name || ' ' || v_last_name || ']');
+end;
+/
+
+set serveroutput on;
+drop procedure tomorrow;
+create or replace procedure tomorrow(p_name in VARCHAR2) is
+begin
+dbms_output.put_line(p_name || ' tomorrow is ' || (sysdate + 1));
+end tomorrow;
+/
+
+declare
+v_name VARCHAR2(20) := 'Edgar';
+begin
+tomorrow(v_name);
+--dbms_output.put_line(v_name || 'Tomorrow is ' || v_day);
+end;
+/
+
+
+drop procedure get_coder;
+create or replace procedure get_coder(
+p_coder_id in coders.coder_id%type, p_first_name out coders.first_name%type,
+p_last_name out coders.last_name%type) is
+begin
+select first_name 
+into p_first_name
+from coders
+where coder_id = p_coder_id;
+
+select last_name 
+into p_last_name
+from coders
+where coder_id = p_coder_id;
+
+dbms_output.put_line('Name ' || p_first_name || ' Last name ' || p_last_name);
+
+end get_coder;
+/
+
+declare
+v_id coders.coder_id%type := 105;
+v_first_name coders.first_name%type;
+v_last_name coders.last_name%type;
+
+begin
+get_coder(v_id, v_first_name, v_last_name);
+--dbms_output.put_line('Salary is ' || v_salary);
+exception
+when others then
+dbms_output.put_line('Can''t get salary for ' || v_id);
 end;
 /

@@ -34,7 +34,7 @@ public class Selector {
 
 			List<Coder> results = new ArrayList<>();
 			while (rs.next()) {
-				results.add(new Coder(rs.getString(1), rs.getString(2), rs.getInt(3)));
+				results.add(new Coder(rs.getString(1), rs.getString(2), rs.getInt(3))); 
 			}
 
 			return results;
